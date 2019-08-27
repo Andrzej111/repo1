@@ -19,17 +19,17 @@ public class PassBreaker {
             if(pass.equalsIgnoreCase(password)){
                 break;
             }
-            System.out.println(pass + " | "+ counter);
+            /*System.out.println(pass + " | "+ counter);
             try {
                 Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
 
         }
         long stop= System.nanoTime();
         double elapsedTime = (double)(stop - start)/1000000000;
         double convert = TimeUnit.MILLISECONDS.convert((stop - start), TimeUnit.NANOSECONDS);
-        System.out.println("BROKEN " +counter );
+        System.out.println("BROKEN " +counter + " | "+ elapsedTime + "  " + convert);
     }
 }
