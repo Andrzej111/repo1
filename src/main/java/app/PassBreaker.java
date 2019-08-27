@@ -10,11 +10,11 @@ public class PassBreaker {
 
     public void passBreaker(String password){
         String pass = null;
-        BigInteger counter =  BigInteger.ZERO;
+        BigInteger counter =  BigInteger.ZERO;//przypisanie zera do BigInteger
         long start = System.nanoTime();
 
         while (true){
-            pass = RandomStringUtils.randomAlphabetic(password.length());
+            pass = RandomStringUtils.randomAlphabetic(password.length());//generowanie łąncuchów- wszystkich kombinacji
             counter = counter.add(BigInteger.ONE); //zwiększamy counter o 1
             if(pass.equalsIgnoreCase(password)){
                 break;
