@@ -19,12 +19,12 @@ public class PassBreaker {
             if(pass.equalsIgnoreCase(password)){
                 break;
             }
-            /*System.out.println(pass + " | "+ counter);
-            try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }*/
+//            System.out.println(pass + " | "+ counter);
+//            try {
+//                Thread.sleep(200);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
         }
         long stop= System.nanoTime();
