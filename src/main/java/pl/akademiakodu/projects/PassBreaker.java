@@ -1,4 +1,4 @@
-package app;
+package pl.akademiakodu.projects;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 public class PassBreaker {
 
-    public void passBreaker(String password){
+    public void tryToBreakPassword(String password, ShowLog showLog, int slowRun){
         String pass = null;
         BigInteger counter =  BigInteger.ZERO;//przypisanie zera do BigInteger
         long start = System.nanoTime();
@@ -19,13 +19,17 @@ public class PassBreaker {
             if(pass.equalsIgnoreCase(password)){
                 break;
             }
-//            System.out.println(pass + " | "+ counter);
-//            try {
-//                Thread.sleep(200);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
+            if(showLog.showValue()){
+                System.out.println(pass + " | "+ counter);
+            }
 
+            if (slowRun>0) {
+                try {
+                    Thread.sleep(slowRun);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
         long stop= System.nanoTime();
         double elapsedTime = (double)(stop - start)/1000000000;
